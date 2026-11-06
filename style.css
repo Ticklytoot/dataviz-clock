@@ -1,6 +1,7 @@
-/* ========================
-   LAYLA'S WEBSITE
-========================= */
+
+/* =========================
+   LAYLA'S CREATIVE CORNER ✿
+   ========================= */
 
 :root {
   --background: #f6f0fc;
@@ -25,11 +26,11 @@ body {
   background-color: var(--background);
   color: var(--text);
   font-family: Georgia, serif;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 section {
-  padding: 70px 10%;
+  padding: 75px 10%;
 }
 
 a {
@@ -37,12 +38,14 @@ a {
   text-decoration: none;
 }
 
-/* Navigation */
+/* =========================
+   NAVIGATION
+   ========================= */
 
 header {
-  background-color: var(--surface);
+  background: rgba(255, 250, 255, 0.9);
   border-bottom: 1px solid var(--border);
-  padding: 18px 10%;
+  padding: 22px 10%;
 }
 
 nav {
@@ -55,29 +58,49 @@ nav {
 
 .logo {
   color: var(--accent);
-  font-size: 22px;
+  font-size: 23px;
+  font-weight: normal;
+  font-style: italic;
+  letter-spacing: 1px;
 }
 
 nav ul {
   display: flex;
+  align-items: center;
   list-style: none;
-  gap: 22px;
+  gap: 12px;
 }
 
 nav a {
   color: var(--muted);
   font-size: 14px;
+  padding: 8px 15px;
+  border-radius: 25px;
+  transition: 0.3s ease;
 }
 
 nav a:hover {
-  color: var(--accent);
+  background-color: var(--accent-light);
+  color: #684a83;
 }
 
-/* Hero section */
+nav a::after {
+  content: " ✧";
+  color: #b99bd2;
+  font-size: 10px;
+}
+
+/* =========================
+   HERO SECTION
+   ========================= */
 
 .hero {
   text-align: center;
-  padding: 100px 10% 85px;
+  padding: 110px 10% 90px;
+  background:
+    radial-gradient(circle at 15% 25%, #eee2fa 0, transparent 25%),
+    radial-gradient(circle at 85% 75%, #eadcf5 0, transparent 25%),
+    #f6f0fc;
 }
 
 .eyebrow {
@@ -88,9 +111,11 @@ nav a:hover {
 }
 
 .hero h1 {
-  font-size: 52px;
-  color: var(--text);
+  font-size: 56px;
+  color: #684a83;
   margin-bottom: 15px;
+  font-weight: normal;
+  font-style: italic;
 }
 
 .hero-description {
@@ -100,10 +125,10 @@ nav a:hover {
 }
 
 .hero-decoration {
-  color: var(--accent);
-  font-size: 24px;
-  margin-top: 30px;
-  letter-spacing: 8px;
+  color: #a987c5;
+  font-size: 25px;
+  margin-top: 35px;
+  letter-spacing: 10px;
 }
 
 /* Buttons */
@@ -112,22 +137,27 @@ nav a:hover {
   display: inline-block;
   background-color: var(--accent);
   color: white;
-  padding: 11px 22px;
+  padding: 11px 24px;
   border-radius: 25px;
   font-size: 14px;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 .button:hover {
   background-color: #785494;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 
-/* Section headings */
+/* =========================
+   SECTION HEADINGS
+   ========================= */
 
 .section-heading {
-  font-size: 32px;
+  font-size: 34px;
+  color: #684a83;
   margin-bottom: 12px;
+  font-weight: normal;
+  font-style: italic;
 }
 
 .section-description {
@@ -136,7 +166,9 @@ nav a:hover {
   margin-bottom: 30px;
 }
 
-/* Digital clock */
+/* =========================
+   DIGITAL CLOCK
+   ========================= */
 
 #clock-section {
   text-align: center;
@@ -145,16 +177,17 @@ nav a:hover {
 .clock-card {
   max-width: 450px;
   margin: 25px auto 0;
-  padding: 30px;
+  padding: 35px;
   background-color: var(--accent-light);
   border: 1px solid var(--border);
-  border-radius: 18px;
+  border-radius: 25px;
   transition: background-color 0.5s;
+  box-shadow: 0 8px 25px rgba(130, 100, 160, 0.08);
 }
 
 #clock-greeting {
   color: var(--accent);
-  font-size: 20px;
+  font-size: 21px;
   margin-bottom: 10px;
 }
 
@@ -177,7 +210,9 @@ nav a:hover {
   margin-top: 12px;
 }
 
-/* About section */
+/* =========================
+   ABOUT SECTION
+   ========================= */
 
 #about {
   text-align: center;
@@ -186,21 +221,29 @@ nav a:hover {
 .about-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin-top: 30px;
+  gap: 20px;
+  margin-top: 35px;
 }
 
 .about-card {
   background-color: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 15px;
-  padding: 25px;
+  border-radius: 20px;
+  padding: 28px;
   text-align: left;
+  transition: 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(130, 100, 160, 0.08);
 }
 
 .about-card h3 {
   color: var(--accent);
   margin-bottom: 12px;
+  font-size: 19px;
+  font-weight: normal;
 }
 
 .about-card p {
@@ -208,7 +251,9 @@ nav a:hover {
   font-size: 14px;
 }
 
-/* Projects section */
+/* =========================
+   PROJECTS SECTION
+   ========================= */
 
 #work {
   text-align: center;
@@ -217,32 +262,36 @@ nav a:hover {
 .project-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
-  margin-top: 30px;
+  gap: 20px;
+  margin-top: 35px;
 }
 
 .project-card {
   background-color: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 15px;
-  padding: 25px;
+  border-radius: 20px;
+  padding: 28px;
   text-align: left;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 .project-card:hover {
   transform: translateY(-4px);
-  border-color: var(--accent);
+  border-color: #c5a9df;
+  box-shadow: 0 8px 20px rgba(130, 100, 160, 0.08);
 }
 
 .project-number {
-  color: var(--accent);
+  color: #b99bd2;
   font-size: 13px;
+  letter-spacing: 2px;
 }
 
 .project-card h3 {
+  color: #684a83;
   margin: 10px 0;
-  font-size: 20px;
+  font-size: 21px;
+  font-weight: normal;
 }
 
 .project-card p {
@@ -255,12 +304,14 @@ nav a:hover {
   display: inline-block;
   background-color: var(--accent-light);
   color: #684a83;
-  padding: 5px 12px;
+  padding: 5px 13px;
   border-radius: 20px;
   font-size: 12px;
 }
 
-/* Project chart */
+/* =========================
+   DATA VISUALIZATION
+   ========================= */
 
 #data {
   text-align: center;
@@ -269,10 +320,11 @@ nav a:hover {
 .chart-container {
   background-color: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 25px;
+  border-radius: 22px;
+  padding: 30px;
   max-width: 750px;
   margin: 25px auto;
+  box-shadow: 0 8px 25px rgba(130, 100, 160, 0.06);
 }
 
 .project-total {
@@ -283,29 +335,42 @@ nav a:hover {
   margin-top: 20px;
 }
 
-/* Contact section */
+/* =========================
+   CONTACT SECTION
+   ========================= */
 
 #contact {
   text-align: center;
-  background-color: #eee5f8;
+  background:
+    radial-gradient(circle at 85% 20%, #e5d5f5 0, transparent 25%),
+    #eee5f8;
 }
 
 #contact .section-description {
   margin: 0 auto 25px;
 }
 
-/* Footer */
+/* =========================
+   FOOTER
+   ========================= */
 
 footer {
   text-align: center;
-  padding: 25px;
+  padding: 28px;
   background-color: var(--surface);
   color: var(--muted);
   font-size: 13px;
   border-top: 1px solid var(--border);
 }
 
-/* Mobile layout */
+footer p + p {
+  margin-top: 5px;
+  color: #a18eaf;
+}
+
+/* =========================
+   MOBILE FRIENDLY
+   ========================= */
 
 @media (max-width: 700px) {
 
@@ -314,7 +379,7 @@ footer {
   }
 
   header {
-    padding: 18px 7%;
+    padding: 20px 7%;
   }
 
   nav {
@@ -324,11 +389,19 @@ footer {
   nav ul {
     justify-content: center;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 8px;
+  }
+
+  .hero {
+    padding: 80px 7%;
   }
 
   .hero h1 {
-    font-size: 40px;
+    font-size: 42px;
+  }
+
+  .section-heading {
+    font-size: 29px;
   }
 
   .about-grid,
@@ -340,4 +413,7 @@ footer {
     font-size: 30px;
   }
 
+  .chart-container {
+    padding: 15px;
+  }
 }
