@@ -1,3 +1,4 @@
+
 /* =========================
    LAYLA'S CREATIVE CORNER ✿
    ========================= */
@@ -11,8 +12,6 @@
   --accent-light: #e5d5f5;
   --border: #e5d8f0;
 }
-
-/* General styling */
 
 * {
   margin: 0;
@@ -35,6 +34,10 @@ section {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+button {
+  font-family: inherit;
 }
 
 /* =========================
@@ -130,21 +133,30 @@ nav a::after {
   letter-spacing: 10px;
 }
 
-/* Buttons */
+/* =========================
+   BUTTONS
+   ========================= */
 
 .button {
   display: inline-block;
   background-color: var(--accent);
   color: white;
   padding: 11px 24px;
+  border: none;
   border-radius: 25px;
   font-size: 14px;
+  cursor: pointer;
   transition: 0.3s ease;
 }
 
 .button:hover {
   background-color: #785494;
   transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(130, 100, 160, 0.2);
+}
+
+.button:active {
+  transform: scale(0.96);
 }
 
 /* =========================
@@ -166,7 +178,7 @@ nav a::after {
 }
 
 /* =========================
-   DIGITAL CLOCK
+   INTERACTIVE CLOCK
    ========================= */
 
 #clock-section {
@@ -180,33 +192,80 @@ nav a::after {
   background-color: var(--accent-light);
   border: 1px solid var(--border);
   border-radius: 25px;
-  transition: background-color 0.5s;
   box-shadow: 0 8px 25px rgba(130, 100, 160, 0.08);
+  transition: background-color 0.5s, transform 0.3s;
+}
+
+.clock-card:hover {
+  transform: translateY(-4px);
 }
 
 #clock-greeting {
-  color: var(--accent);
+  color: #785494;
   font-size: 21px;
   margin-bottom: 10px;
 }
 
-#clock-time {
+.clock-button {
+  display: block;
+  margin: 12px auto;
+  background: transparent;
+  border: none;
   color: var(--text);
+  font-family: Georgia, serif;
   font-size: 38px;
   font-weight: bold;
-  letter-spacing: 2px;
+  cursor: pointer;
+  transition: color 0.3s;
 }
 
-#clock-date {
+.clock-button:hover {
+  color: var(--accent);
+}
+
+.clock-button:active {
+  transform: scale(0.96);
+}
+
+.date-button {
+  background: transparent;
+  border: none;
   color: var(--muted);
+  font-family: Georgia, serif;
   font-size: 14px;
-  margin-top: 8px;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.date-button:hover {
+  color: #684a83;
 }
 
 #clock-message {
   color: var(--muted);
   font-style: italic;
+  margin-top: 15px;
+}
+
+.star-button {
+  background: transparent;
+  border: none;
+  color: var(--accent);
+  font-size: 30px;
+  cursor: pointer;
   margin-top: 12px;
+  transition: transform 0.3s;
+}
+
+.star-button:hover {
+  transform: rotate(45deg) scale(1.2);
+}
+
+.clock-hint {
+  color: #a18eaf;
+  font-size: 11px;
+  margin-top: 10px;
 }
 
 /* =========================
@@ -230,12 +289,19 @@ nav a::after {
   border-radius: 20px;
   padding: 28px;
   text-align: left;
+  cursor: pointer;
   transition: 0.3s ease;
 }
 
 .about-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(130, 100, 160, 0.08);
+  transform: translateY(-5px);
+  border-color: #c5a9df;
+  box-shadow: 0 8px 20px rgba(130, 100, 160, 0.1);
+}
+
+.about-card.active {
+  background-color: #f0e6fa;
+  border-color: var(--accent);
 }
 
 .about-card h3 {
@@ -248,6 +314,27 @@ nav a::after {
 .about-card p {
   color: var(--muted);
   font-size: 14px;
+}
+
+.card-extra {
+  display: none;
+  margin-top: 15px;
+  padding-top: 12px;
+  border-top: 1px dashed #c5a9df;
+  color: #785494 !important;
+  font-style: italic;
+}
+
+.about-card.active .card-extra,
+.project-card.active .card-extra {
+  display: block;
+}
+
+.interaction-hint {
+  color: #a18eaf;
+  font-size: 12px;
+  font-style: italic;
+  margin-top: 20px;
 }
 
 /* =========================
@@ -271,13 +358,19 @@ nav a::after {
   border-radius: 20px;
   padding: 28px;
   text-align: left;
+  cursor: pointer;
   transition: 0.3s ease;
 }
 
 .project-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-5px);
   border-color: #c5a9df;
-  box-shadow: 0 8px 20px rgba(130, 100, 160, 0.08);
+  box-shadow: 0 8px 20px rgba(130, 100, 160, 0.1);
+}
+
+.project-card.active {
+  background-color: #f0e6fa;
+  border-color: var(--accent);
 }
 
 .project-number {
@@ -306,6 +399,16 @@ nav a::after {
   padding: 5px 13px;
   border-radius: 20px;
   font-size: 12px;
+}
+
+/* Keyboard focus */
+
+.about-card:focus-visible,
+.project-card:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
 }
 
 /* =========================
@@ -349,6 +452,13 @@ nav a::after {
   margin: 0 auto 25px;
 }
 
+#surprise-message {
+  color: #785494;
+  font-style: italic;
+  margin-top: 18px;
+  min-height: 25px;
+}
+
 /* =========================
    FOOTER
    ========================= */
@@ -368,7 +478,7 @@ footer p + p {
 }
 
 /* =========================
-   MOBILE FRIENDLY
+   MOBILE LAYOUT
    ========================= */
 
 @media (max-width: 700px) {
@@ -415,4 +525,5 @@ footer p + p {
   .chart-container {
     padding: 15px;
   }
+
 }
