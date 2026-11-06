@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Layla's Creative Corner</title>
 
-  <!-- CSS stylesheet -->
+  <title>Layla's Creative Corner ✿</title>
+
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
 
   <!-- jQuery and Chart.js -->
@@ -29,9 +31,12 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
+
   <main>
+
+    <!-- Hero Section -->
     <section class="hero">
+
       <p class="eyebrow">WELCOME TO MY LITTLE WORLD ✧</p>
 
       <h1>Hi, I'm Layla!</h1>
@@ -44,62 +49,131 @@
       <a href="#work" class="button">Explore my work ♡</a>
 
       <div class="hero-decoration">✿　✧　♡　✧</div>
+
     </section>
 
-    <!-- Digital Clock -->
+
+    <!-- Interactive Clock -->
     <section id="clock-section">
+
       <p class="eyebrow">A LITTLE MOMENT IN TIME ✦</p>
-      <h2 class="section-heading">Local time</h2>
+
+      <h2 class="section-heading">Time for a little pause</h2>
 
       <div class="clock-card">
+
         <p id="clock-greeting">Hello!</p>
-        <div id="clock-time">00:00:00</div>
-        <p id="clock-date"></p>
+
+        <button
+          id="clock-time"
+          class="clock-button"
+          type="button">
+          00:00:00 AM
+        </button>
+
+        <button
+          id="clock-date"
+          class="date-button"
+          type="button">
+          Click to change date format
+        </button>
+
         <p id="clock-message">Enjoy the moment.</p>
+
+        <button
+          id="clock-star"
+          class="star-button"
+          type="button"
+          aria-label="Change clock message">
+          ✧
+        </button>
+
+        <p class="clock-hint">
+          Click the time, date, or star to interact ♡
+        </p>
+
       </div>
+
     </section>
+
 
     <!-- About Section -->
     <section id="about">
+
       <p class="eyebrow">A LITTLE ABOUT ME ✿</p>
+
       <h2 class="section-heading">Getting to know me</h2>
 
       <p class="section-description">
-        A few things about me and what inspires me.
+        A few things about me and what inspires my creativity.
       </p>
 
       <div class="about-grid">
 
-        <div class="about-card">
+        <div class="about-card" tabindex="0" role="button"
+          aria-expanded="false">
+
           <h3>♡ My Interests</h3>
+
           <p>
             I enjoy graphic design, illustration, typography,
             and exploring different creative ideas.
           </p>
+
+          <p class="card-extra">
+            I'm always looking for new things to experiment with.
+          </p>
+
         </div>
 
-        <div class="about-card">
+
+        <div class="about-card" tabindex="0" role="button"
+          aria-expanded="false">
+
           <h3>✧ My Style</h3>
+
           <p>
             I love playful colors, interesting layouts,
-            little details, and aesthetic visuals.
+            little details, and whimsical visuals.
           </p>
+
+          <p class="card-extra">
+            Purple is definitely one of my favorite design colors!
+          </p>
+
         </div>
 
-        <div class="about-card">
+
+        <div class="about-card" tabindex="0" role="button"
+          aria-expanded="false">
+
           <h3>✿ My Goals</h3>
+
           <p>
             I want to keep learning new skills and create
             designs that are both meaningful and fun.
           </p>
+
+          <p class="card-extra">
+            Every project is an opportunity to learn something new.
+          </p>
+
         </div>
 
       </div>
+
+      <p class="interaction-hint">
+        Click a card to discover a little more ✧
+      </p>
+
     </section>
+
 
     <!-- Projects Section -->
     <section id="work">
+
       <p class="eyebrow">THINGS I'VE CREATED ✧</p>
+
       <h2 class="section-heading">My creative work</h2>
 
       <p class="section-description">
@@ -108,98 +182,184 @@
 
       <div class="project-grid">
 
-        <div class="project-card">
+        <div class="project-card" tabindex="0" role="button"
+          aria-expanded="false">
+
           <span class="project-number">01</span>
           <h3>Portrait Experiments</h3>
+
           <p>
             A series of grayscale portrait experiments
             exploring contrast and visual composition.
           </p>
+
           <span class="project-tag">Graphic Design</span>
+
+          <p class="card-extra">
+            This project helped me explore visual contrast and image editing.
+          </p>
+
         </div>
 
-        <div class="project-card">
+
+        <div class="project-card" tabindex="0" role="button"
+          aria-expanded="false">
+
           <span class="project-number">02</span>
           <h3>Calcifer Study</h3>
+
           <p>
             A digital illustration inspired by Calcifer,
             exploring color and character design.
           </p>
+
           <span class="project-tag">Illustration</span>
+
+          <p class="card-extra">
+            I experimented with digital drawing and color choices.
+          </p>
+
         </div>
 
-        <div class="project-card">
+
+        <div class="project-card" tabindex="0" role="button"
+          aria-expanded="false">
+
           <span class="project-number">03</span>
           <h3>Sol LeWitt Study</h3>
+
           <p>
             A geometric composition study inspired by
             Sol LeWitt's approach to shapes and patterns.
           </p>
+
           <span class="project-tag">Digital Art</span>
+
+          <p class="card-extra">
+            This study explored repetition, geometry, and composition.
+          </p>
+
         </div>
 
-        <div class="project-card">
+
+        <div class="project-card" tabindex="0" role="button"
+          aria-expanded="false">
+
           <span class="project-number">04</span>
           <h3>Under $20</h3>
+
           <p>
             A Figma interface design project focused
             on creating a simple shopping experience.
           </p>
+
           <span class="project-tag">UI/UX Design</span>
+
+          <p class="card-extra">
+            I worked on layouts and user-friendly interface elements.
+          </p>
+
         </div>
 
-        <div class="project-card">
+
+        <div class="project-card" tabindex="0" role="button"
+          aria-expanded="false">
+
           <span class="project-number">05</span>
           <h3>NYC Data Visualization</h3>
+
           <p>
             A visual exploration of unintentional drug
-            deaths in NYC from 2000 to 2024.
+            poisoning deaths in NYC from 2000 to 2024.
           </p>
+
           <span class="project-tag">Data Design</span>
+
+          <p class="card-extra">
+            This project focused on communicating information through visuals.
+          </p>
+
         </div>
 
-        <div class="project-card">
+
+        <div class="project-card" tabindex="0" role="button"
+          aria-expanded="false">
+
           <span class="project-number">06</span>
           <h3>Shirley Chisholm Campaign</h3>
+
           <p>
             A visual campaign inspired by Shirley
             Chisholm's legacy and impact.
           </p>
+
           <span class="project-tag">Campaign Design</span>
+
+          <p class="card-extra">
+            I explored visual storytelling and campaign design.
+          </p>
+
         </div>
 
-        <div class="project-card">
+
+        <div class="project-card" tabindex="0" role="button"
+          aria-expanded="false">
+
           <span class="project-number">07</span>
           <h3>Modular Alphabet</h3>
+
           <p>
             An experimental alphabet inspired by
             Art Deco and Bauhaus design.
           </p>
+
           <span class="project-tag">Typography</span>
+
+          <p class="card-extra">
+            I experimented with shapes, structure, and letterforms.
+          </p>
+
         </div>
 
       </div>
+
+      <p class="interaction-hint">
+        Click on a project to learn more ♡
+      </p>
+
     </section>
+
 
     <!-- Data Visualization -->
     <section id="data">
+
       <p class="eyebrow">MY CREATIVE JOURNEY ✿</p>
+
       <h2 class="section-heading">My projects so far</h2>
 
       <p class="section-description">
         A breakdown of the projects I've created across different design areas.
+        Hover over the chart to explore the numbers!
       </p>
 
       <div class="chart-container">
+
         <canvas id="interestChart"></canvas>
+
       </div>
 
-      <p class="project-total">7 projects and counting ♡</p>
+      <p class="project-total">
+        7 projects and counting ♡
+      </p>
+
     </section>
+
 
     <!-- Contact Section -->
     <section id="contact">
+
       <p class="eyebrow">LET'S CONNECT ✧</p>
+
       <h2 class="section-heading">Thanks for stopping by!</h2>
 
       <p class="section-description">
@@ -209,21 +369,40 @@
       <a
         href="https://laylatavarezogando.myportfolio.com"
         target="_blank"
-        class="button"
-      >
+        rel="noopener noreferrer"
+        class="button">
         Visit my portfolio ♡
       </a>
+
+      <br><br>
+
+      <button
+        id="surprise-button"
+        class="button"
+        type="button">
+        A little surprise ✿
+      </button>
+
+      <p id="surprise-message" aria-live="polite"></p>
+
     </section>
 
   </main>
 
+
   <!-- Footer -->
   <footer>
+
     <p>Made with ♡ by Layla · 2026</p>
-    <p>Thanks for visiting my little corner of the internet ✿</p>
+
+    <p>
+      Thanks for visiting my little corner of the internet ✿
+    </p>
+
   </footer>
 
-  <!-- Separate JavaScript file -->
+
+  <!-- JavaScript file -->
   <script src="script.js"></script>
 
 </body>
