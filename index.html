@@ -1,13 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Layla's Portfolio</title>
 
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 
   <!-- jQuery -->
@@ -35,7 +34,7 @@
 
   <main>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero" id="home">
 
       <div class="hero-text">
@@ -56,7 +55,7 @@
       <div class="hero-card">
         <p class="eyebrow">A LITTLE ABOUT MY PROCESS</p>
 
-        <h2>Mostly made with tea and a dream.</h2>
+        <h2>Creativity starts with curiosity.</h2>
 
         <p>
           I like exploring different ideas, trying new things,
@@ -73,27 +72,24 @@
     </section>
 
 
-    <!-- Digital Clock Section -->
+    <!-- Digital Clock -->
     <section id="clock-section">
 
-      <p class="eyebrow">A LITTLE MOMENT IN TIME WITH LAYLA ✦</p>
+      <p class="eyebrow">A LITTLE MOMENT IN TIME ✦</p>
 
       <h2 class="section-heading">Local time</h2>
 
       <div class="clock-card">
         <p id="clock-greeting">Hello!</p>
-
         <div id="clock-time">00:00:00</div>
-
         <p id="clock-date"></p>
-
         <p id="clock-message">Enjoy the moment.</p>
       </div>
 
     </section>
 
 
-    <!-- About Section -->
+    <!-- About -->
     <section id="about">
 
       <p class="eyebrow">GET TO KNOW ME</p>
@@ -105,7 +101,8 @@
         <div class="about-card">
           <h3>My Interests ♡</h3>
           <p>
-            I'm interested digital experiences, and     exploring how design
+            I'm interested in visual storytelling, typography,
+            digital experiences, and exploring how design
             connects with people.
           </p>
         </div>
@@ -132,7 +129,7 @@
     </section>
 
 
-    <!-- Projects Section -->
+    <!-- Projects -->
     <section id="work">
 
       <p class="eyebrow">SOME THINGS I'VE MADE</p>
@@ -148,7 +145,7 @@
         <div class="project">
           <span class="project-number">01</span>
           <h3>Portrait Experiments</h3>
-          <p>Exploring portraiture and visual effects.</p>
+          <p>Grayscale portrait and visual experiments.</p>
         </div>
 
         <div class="project">
@@ -160,19 +157,19 @@
         <div class="project">
           <span class="project-number">03</span>
           <h3>Sol LeWitt Study</h3>
-          <p>A study of geometric forms and composition.</p>
+          <p>A geometric composition study.</p>
         </div>
 
         <div class="project">
           <span class="project-number">04</span>
           <h3>Under $20</h3>
-          <p>A user experience and interface design project.</p>
+          <p>A Figma interface and user experience project.</p>
         </div>
 
         <div class="project">
           <span class="project-number">05</span>
           <h3>NYC Data Visualization</h3>
-          <p>Visualizing data through graphic design.</p>
+          <p>Visualizing NYC unintentional drug poisoning data.</p>
         </div>
 
         <div class="project">
@@ -184,32 +181,35 @@
         <div class="project">
           <span class="project-number">07</span>
           <h3>Modular Alphabet</h3>
-          <p>Experimenting with letterforms and shapes.</p>
+          <p>Art Deco and Bauhaus-inspired typography.</p>
         </div>
 
       </div>
     </section>
 
 
-    <!-- Data Visualization Section -->
+    <!-- Project Chart -->
     <section id="data">
 
-      <p class="eyebrow">A VISUAL LOOK AT MY INTERESTS</p>
+      <p class="eyebrow">MY CREATIVE JOURNEY ✿</p>
 
-      <h2 class="section-heading">Design interests</h2>
+      <h2 class="section-heading">My projects so far</h2>
 
       <p class="section-description">
-        A small chart showing the areas of design I enjoy exploring.
+        A breakdown of the projects I've created across
+        different design areas.
       </p>
 
       <div class="chart-container">
         <canvas id="interestChart"></canvas>
       </div>
 
+      <p class="project-total">7 projects and counting ♡</p>
+
     </section>
 
 
-    <!-- Contact Section -->
+    <!-- Contact -->
     <section id="contact">
 
       <p class="eyebrow">LET'S CONNECT</p>
@@ -239,7 +239,7 @@
   <!-- JavaScript -->
   <script>
 
-    // Design interests chart
+    // Project count chart
     const ctx = document.getElementById("interestChart");
 
     new Chart(ctx, {
@@ -254,9 +254,8 @@
         ],
 
         datasets: [{
-          label: "Interest level",
-
-          data: [2, 2, 1, 2],
+          label: "Number of Projects",
+          data: [3, 1, 1, 2],
 
           backgroundColor: [
             "#9670b5",
@@ -272,12 +271,23 @@
       options: {
         responsive: true,
 
+        plugins: {
+          legend: {
+            display: true
+          }
+        },
+
         scales: {
           y: {
             beginAtZero: true,
 
             ticks: {
               stepSize: 1
+            },
+
+            title: {
+              display: true,
+              text: "Number of Projects"
             }
           }
         }
@@ -304,38 +314,36 @@
         String(minutes).padStart(2, "0") + ":" +
         String(seconds).padStart(2, "0") + " " + ampm;
 
-      // Display the time and date
+      // Display time and date
       $("#clock-time").text(time);
       $("#clock-date").text(now.toDateString());
 
-      // Change greeting and colors based on the time
+      // Change greeting and color based on the time
       if (now.getHours() < 12) {
 
         $("#clock-greeting").text("Good morning ☀");
         $("#clock-message").text("A fresh start to the day.");
-
         $(".clock-card").css("background-color", "#f5e8ff");
 
       } else if (now.getHours() < 18) {
 
         $("#clock-greeting").text("Good afternoon ✿");
         $("#clock-message").text("Make something creative today.");
-
         $(".clock-card").css("background-color", "#eee5f8");
 
       } else {
 
         $("#clock-greeting").text("Good evening ✦");
         $("#clock-message").text("Time to slow down and relax.");
-
         $(".clock-card").css("background-color", "#e5d8f0");
 
       }
     }
 
-    // Update the clock every second
+    // Show clock immediately
     displayTime();
 
+    // Update clock every second
     setInterval(displayTime, 1000);
 
   </script>
