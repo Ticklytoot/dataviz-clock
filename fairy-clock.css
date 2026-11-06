@@ -1,0 +1,208 @@
+/* =========================
+   FAIRY CLOCK ✧
+   ========================= */
+
+/* Keeps flying sparkles and wings from causing sideways scrolling */
+#clock-section {
+  overflow-x: clip;
+}
+
+/* Wrapper the script adds so the wings can sit behind the card */
+.fairy-wrap {
+  position: relative;
+  width: min(450px, calc(100% - 80px));
+  margin: 25px auto 0;
+}
+
+/* The glowing card */
+.fairy-wrap .clock-card {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  max-width: none;
+  border-color: #d6bdee;
+  background-image:
+    radial-gradient(circle at 18% 12%, rgba(255, 255, 255, 0.8) 0, transparent 42%),
+    radial-gradient(circle at 88% 92%, rgba(240, 160, 220, 0.32) 0, transparent 50%);
+  animation: fairy-glow 4s ease-in-out infinite alternate;
+}
+
+@keyframes fairy-glow {
+  from {
+    box-shadow: 0 8px 25px rgba(130, 100, 160, 0.15),
+                0 0 22px rgba(224, 170, 240, 0.30);
+  }
+  to {
+    box-shadow: 0 8px 30px rgba(130, 100, 160, 0.22),
+                0 0 46px rgba(240, 170, 225, 0.55);
+  }
+}
+
+/* Little stars beside the greeting */
+#clock-greeting::before,
+#clock-greeting::after {
+  content: "✦";
+  font-size: 0.6em;
+  margin: 0 0.6em;
+  vertical-align: 0.25em;
+}
+
+#clock-greeting::before {
+  color: #f2b84b;
+  text-shadow: 0 0 8px #f7d774;
+}
+
+#clock-greeting::after {
+  color: #e879c6;
+  text-shadow: 0 0 8px #f2a6dc;
+}
+
+/* Shimmering time */
+.clock-card .clock-button {
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(100deg, #684a83 0%, #c05fc7 25%, #6a9be0 50%, #c05fc7 75%, #684a83 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-style: italic;
+  letter-spacing: 0.5px;
+  filter: drop-shadow(0 0 8px rgba(224, 170, 240, 0.55));
+  animation: fairy-shimmer 7s linear infinite;
+  transition: filter 0.3s;
+}
+
+.clock-card .clock-button:hover {
+  color: transparent;
+  filter: drop-shadow(0 0 12px rgba(240, 170, 225, 0.95));
+}
+
+@keyframes fairy-shimmer {
+  to { background-position: 200% 0; }
+}
+
+/* Wings */
+.fairy-wing {
+  position: absolute;
+  top: 10%;
+  width: 120px;
+  z-index: 0;
+  pointer-events: none;
+  filter: drop-shadow(0 0 10px rgba(224, 170, 240, 0.6));
+}
+
+.fairy-wing svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.fairy-wing-left {
+  left: -100px;
+  transform-origin: 100% 45%;
+  animation: flutter-left 3s ease-in-out infinite;
+}
+
+.fairy-wing-right {
+  right: -100px;
+  transform-origin: 0% 45%;
+  animation: flutter-right 3s ease-in-out infinite;
+}
+
+.fairy-wing-right svg {
+  transform: scaleX(-1);
+}
+
+@keyframes flutter-left {
+  0%, 100% { transform: rotate(0deg) scaleX(1); }
+  50%      { transform: rotate(-7deg) scaleX(0.92); }
+}
+
+@keyframes flutter-right {
+  0%, 100% { transform: rotate(0deg) scaleX(1); }
+  50%      { transform: rotate(7deg) scaleX(0.92); }
+}
+
+/* Sparkles */
+.sparkle-field {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.sparkle {
+  position: absolute;
+  font-size: var(--s, 12px);
+  line-height: 1;
+  color: var(--c, #e879c6);
+  text-shadow: 0 0 6px var(--c, #e879c6), 0 0 12px var(--c, #e879c6);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  user-select: none;
+}
+
+.sparkle-ambient {
+  opacity: 0;
+  animation: fairy-twinkle var(--d, 4s) ease-in-out var(--delay, 0s) infinite;
+}
+
+@keyframes fairy-twinkle {
+  0%, 100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.3) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotate(45deg);
+  }
+}
+
+.sparkle-fly {
+  animation: fairy-fly var(--t, 900ms) ease-out forwards;
+}
+
+@keyframes fairy-fly {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(0.2) rotate(140deg);
+  }
+}
+
+/* Smaller wings on phones */
+@media (max-width: 700px) {
+  .fairy-wrap {
+    width: calc(100% - 80px);
+  }
+
+  .fairy-wing {
+    width: 68px;
+  }
+
+  .fairy-wing-left {
+    left: -52px;
+  }
+
+  .fairy-wing-right {
+    right: -52px;
+  }
+}
+
+/* Calmer version for people who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  .fairy-wrap .clock-card,
+  .fairy-wing,
+  .clock-card .clock-button,
+  .sparkle-ambient {
+    animation: none;
+  }
+
+  .sparkle-ambient {
+    opacity: 0.75;
+  }
+}
