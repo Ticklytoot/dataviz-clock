@@ -1,49 +1,7 @@
-// Design interests chart
-const ctx = document.getElementById("interestChart");
+/* =========================
+   DIGITAL CLOCK
+   ========================= */
 
-new Chart(ctx, {
-  type: "bar",
-
-  data: {
-    labels: [
-      "Graphic & Visual Design",
-      "Creative Coding",
-      "Interaction / UI",
-      "Data Storytelling"
-    ],
-
-    datasets: [{
-      label: "Interest level",
-      data: [2, 2, 1, 2],
-
-      backgroundColor: [
-        "#9670b5",
-        "#c5a9df",
-        "#684a83",
-        "#e5d5f5"
-      ],
-
-      borderRadius: 8
-    }]
-  },
-
-  options: {
-    responsive: true,
-
-    scales: {
-      y: {
-        beginAtZero: true,
-
-        ticks: {
-          stepSize: 1
-        }
-      }
-    }
-  }
-});
-
-
-// Digital clock
 function displayTime() {
 
   // Get the current date and time
@@ -53,25 +11,26 @@ function displayTime() {
   let minutes = now.getMinutes();
   let seconds = now.getSeconds();
 
+  // Set AM or PM
   let ampm = hours >= 12 ? "PM" : "AM";
 
   // Convert to 12-hour time
   hours = hours % 12 || 12;
 
-  // Add zeros to the time
+  // Format the time
   let time =
     String(hours).padStart(2, "0") + ":" +
     String(minutes).padStart(2, "0") + ":" +
     String(seconds).padStart(2, "0") + " " + ampm;
 
-  // Display the time and date using jQuery
+  // Display the time and date
   $("#clock-time").text(time);
   $("#clock-date").text(now.toDateString());
 
-  // Change the greeting and background based on the time
+  // Change the greeting and background color
   if (now.getHours() < 12) {
 
-    $("#clock-greeting").text("Good morning ☀");
+    $("#clock-greeting").text("Good morning ☆〜（ゝ。∂）");
     $("#clock-message").text("A fresh start to the day.");
     $(".clock-card").css("background-color", "#f5e8ff");
 
@@ -90,8 +49,89 @@ function displayTime() {
   }
 }
 
-// Show the clock immediately
+// Display the clock immediately
 displayTime();
+
+// Update the clock every second
+setInterval(displayTime, 1000);
+
+
+/* =========================
+   PROJECT CHART
+   ========================= */
+
+// Find the chart canvas
+const ctx = document.getElementById("interestChart");
+
+// Create the chart
+new Chart(ctx, {
+
+  type: "bar",
+
+  data: {
+
+    labels: [
+      "Graphic & Visual Design",
+      "Creative Coding",
+      "Interaction / UI",
+      "Data Storytelling"
+    ],
+
+    datasets: [{
+
+      label: "Number of Projects",
+
+      data: [3, 1, 1, 2],
+
+      backgroundColor: [
+        "#9670b5",
+        "#c5a9df",
+        "#684a83",
+        "#e5d5f5"
+      ],
+
+      borderRadius: 8
+
+    }]
+
+  },
+
+  options: {
+
+    responsive: true,
+
+    plugins: {
+
+      legend: {
+        display: true
+      }
+
+    },
+
+    scales: {
+
+      y: {
+
+        beginAtZero: true,
+
+        ticks: {
+          stepSize: 1
+        },
+
+        title: {
+          display: true,
+          text: "Number of Projects"
+        }
+
+      }
+
+    }
+
+  }
+
+});
+
+
 
 // Update the clock every second
 setInterval(displayTime, 1000);
