@@ -1,28 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Digital Clock</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <title>Layla's Portfolio</title>
 
-    <script src="script.js" defer></script>
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
-    <div class="clock-container">
-        <h1>My Little Clock ✦</h1>
 
-        <div id="time">00:00:00</div>
+  <!-- Navigation -->
+  <header>
+    <nav>
+      <a href="#home" class="logo">✿ Layla</a>
 
-        <p id="date"></p>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#data">Data</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
 
-        <h2 id="greeting">Hello!</h2>
+  <main>
 
-        <p id="message">Enjoy your day.</p>
-    </div>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+
+      <div class="hero-text">
+        <p class="eyebrow">HELLO, WELCOME TO MY LITTLE CORNER</p>
+
+        <h1>Hi, I'm <span>Layla</span> ♡</h1>
+
+        <p>
+          I'm a design student interested in graphic design,
+          interaction design, and creative coding. I enjoy
+          experimenting with visuals and making things
+          that are both useful and interesting.
+        </p>
+
+        <a href="#work" class="button">Explore my work ✿</a>
+      </div>
+
+      <div class="hero-card">
+        <p class="eyebrow">A LITTLE ABOUT MY PROCESS</p>
+
+        <h2>Mostly made with tea and a dream.</h2>
+
+        <p>
+          I like exploring different ideas, trying new things,
+          and learning through the design process.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Graphic Design</span>
+          <span class="tag">UI / UX</span>
+          <span class="tag">Creative Coding</span>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- Digital Clock Section -->
+    <section id="clock-section">
+
+      <p class="eyebrow">A LITTLE MOMENT IN TIME WITH LAYLA ✦</p>
+
+      <h2 class="section-heading">Local time</h2>
+
+      <div class="clock-card">
+        <p id="clock-greeting">Hello!</p>
+
+        <div id="clock-time">00:00:00</div>
+
+        <p id="clock-date"></p>
+
+        <p id="clock-message">Enjoy the moment.</p>
+      </div>
+
+    </section>
+
+
+    <!-- About Section -->
+    <section id="about">
+
+      <p class="eyebrow">GET TO KNOW ME</p>
+
+      <h2 class="section-heading">A little about me</h2>
+
+      <div class="about-grid">
+
+        <div class="about-card">
+          <h3>My Interests ♡</h3>
+          <p>
+            I'm interested digital experiences, and     exploring how design
+            connects with people.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <h3>What I Do ✿</h3>
+          <p>
+            I work with different design tools and experiment
+            with creative coding, layouts, illustrations,
+            and interactive projects.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <h3>My Goal ✦</h3>
+          <p>
+            I want to keep improving my skills and create
+            meaningful designs that combine creativity
+            and functionality.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Projects Section -->
+    <section id="work">
+
+      <p class="eyebrow">SOME THINGS I'VE MADE</p>
+
+      <h2 class="section-heading">Selected work</h2>
+
+      <p class="section-description">
+        A collection of projects from my design classes.
+      </p>
+
+      <div class="projects">
+
+        <div class="project">
+          <span class="project-number">01</span>
+          <h3>Portrait Experiments</h3>
+          <p>Exploring portraiture and visual effects.</p>
+        </div>
+
+        <div class="project">
+          <span class="project-number">02</span>
+          <h3>Calcifer Study</h3>
+          <p>A digital illustration inspired by animation.</p>
+        </div>
+
+        <div class="project">
+          <span class="project-number">03</span>
+          <h3>Sol LeWitt Study</h3>
+          <p>A study of geometric forms and composition.</p>
+        </div>
+
+        <div class="project">
+          <span class="project-number">04</span>
+          <h3>Under $20</h3>
+          <p>A user experience and interface design project.</p>
+        </div>
+
+        <div class="project">
+          <span class="project-number">05</span>
+          <h3>NYC Data Visualization</h3>
+          <p>Visualizing data through graphic design.</p>
+        </div>
+
+        <div class="project">
+          <span class="project-number">06</span>
+          <h3>Shirley Chisholm Campaign</h3>
+          <p>A visual campaign inspired by her legacy.</p>
+        </div>
+
+        <div class="project">
+          <span class="project-number">07</span>
+          <h3>Modular Alphabet</h3>
+          <p>Experimenting with letterforms and shapes.</p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Data Visualization Section -->
+    <section id="data">
+
+      <p class="eyebrow">A VISUAL LOOK AT MY INTERESTS</p>
+
+      <h2 class="section-heading">Design interests</h2>
+
+      <p class="section-description">
+        A small chart showing the areas of design I enjoy exploring.
+      </p>
+
+      <div class="chart-container">
+        <canvas id="interestChart"></canvas>
+      </div>
+
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact">
+
+      <p class="eyebrow">LET'S CONNECT</p>
+
+      <h2 class="section-heading">Thanks for stopping by ♡</h2>
+
+      <p>Want to see more of my work?</p>
+
+      <a
+        href="https://laylatavarezogando.myportfolio.com"
+        target="_blank"
+        class="button">
+        Visit my portfolio ✿
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer>
+    <p>Made with ♡ by Layla · 2026</p>
+  </footer>
+
+
+  <!-- JavaScript -->
+  <script>
+
+    // Design interests chart
+    const ctx = document.getElementById("interestChart");
+
+    new Chart(ctx, {
+      type: "bar",
+
+      data: {
+        labels: [
+          "Graphic & Visual Design",
+          "Creative Coding",
+          "Interaction / UI",
+          "Data Storytelling"
+        ],
+
+        datasets: [{
+          label: "Interest level",
+
+          data: [2, 2, 1, 2],
+
+          backgroundColor: [
+            "#9670b5",
+            "#c5a9df",
+            "#684a83",
+            "#e5d5f5"
+          ],
+
+          borderRadius: 8
+        }]
+      },
+
+      options: {
+        responsive: true,
+
+        scales: {
+          y: {
+            beginAtZero: true,
+
+            ticks: {
+              stepSize: 1
+            }
+          }
+        }
+      }
+    });
+
+
+    // Digital clock
+    function displayTime() {
+
+      let now = new Date();
+
+      let hours = now.getHours();
+      let minutes = now.getMinutes();
+      let seconds = now.getSeconds();
+
+      let ampm = hours >= 12 ? "PM" : "AM";
+
+      hours = hours % 12 || 12;
+
+      // Format the time
+      let time =
+        String(hours).padStart(2, "0") + ":" +
+        String(minutes).padStart(2, "0") + ":" +
+        String(seconds).padStart(2, "0") + " " + ampm;
+
+      // Display the time and date
+      $("#clock-time").text(time);
+      $("#clock-date").text(now.toDateString());
+
+      // Change greeting and colors based on the time
+      if (now.getHours() < 12) {
+
+        $("#clock-greeting").text("Good morning ☀");
+        $("#clock-message").text("A fresh start to the day.");
+
+        $(".clock-card").css("background-color", "#f5e8ff");
+
+      } else if (now.getHours() < 18) {
+
+        $("#clock-greeting").text("Good afternoon ✿");
+        $("#clock-message").text("Make something creative today.");
+
+        $(".clock-card").css("background-color", "#eee5f8");
+
+      } else {
+
+        $("#clock-greeting").text("Good evening ✦");
+        $("#clock-message").text("Time to slow down and relax.");
+
+        $(".clock-card").css("background-color", "#e5d8f0");
+
+      }
+    }
+
+    // Update the clock every second
+    displayTime();
+
+    setInterval(displayTime, 1000);
+
+  </script>
+
 </body>
 </html>
