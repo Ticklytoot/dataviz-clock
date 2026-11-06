@@ -1,100 +1,235 @@
-//Design interests chart
-const ctx = document.getElementById("interestChart");
-
-new Chart(ctx, {
-  type: "bar",
-
-  data: {
-    labels: [
-      "Graphic & Visual Design",
-      "Creative Coding",
-      "Interaction / UI",
-      "Data Storytelling"
-    ],
-
-    datasets: [{
-      label: "Interest level",
-      data: [2, 2, 1, 2],
-
-      backgroundColor: [
-        "#9670b5",
-        "#c5a9df",
-        "#684a83",
-        "#e5d5f5"
-      ],
-
-      borderRadius: 8
-    }]
-  },
-
-  options: {
-    responsive: true,
-
-    scales: {
-      y: {
-        beginAtZero: true,
-
-        ticks: {
-          stepSize: 1
-        }
-      }
-    }
-  }
-});
 
 
-// Digital clock
-function displayTime() {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layla's Creative Corner</title>
 
-  // Get the current date and time
-  let now = new Date();
+  <!-- CSS stylesheet -->
+  <link rel="stylesheet" href="style.css">
 
-  let hours = now.getHours();
-  let minutes = now.getMinutes();
-  let seconds = now.getSeconds();
+  <!-- jQuery and Chart.js -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
 
-  let ampm = hours >= 12 ? "PM" : "AM";
+<body>
 
-  // Convert to 12-hour time
-  hours = hours % 12 || 12;
+  <!-- Navigation -->
+  <header>
+    <nav>
+      <h2 class="logo">Layla's Corner ✿</h2>
 
-  // Add zeros to the time
-  let time =
-    String(hours).padStart(2, "0") + ":" +
-    String(minutes).padStart(2, "0") + ":" +
-    String(seconds).padStart(2, "0") + " " + ampm;
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#work">My Work</a></li>
+        <li><a href="#data">Data</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  // Display the time and date using jQuery
-  $("#clock-time").text(time);
-  $("#clock-date").text(now.toDateString());
+  <!-- Hero Section -->
+  <main>
+    <section class="hero">
+      <p class="eyebrow">WELCOME TO MY LITTLE WORLD ✧</p>
 
-  // Change the greeting and background based on the time
-  if (now.getHours() < 12) {
+      <h1>Hi, I'm Layla!</h1>
 
-    $("#clock-greeting").text("Good morning ☀");
-    $("#clock-message").text("A fresh start to the day.");
-    $(".clock-card").css("background-color", "#f5e8ff");
+      <p class="hero-description">
+        I'm a design student who enjoys experimenting with colors,
+        typography, illustrations, and interactive experiences.
+      </p>
 
-  } else if (now.getHours() < 18) {
+      <a href="#work" class="button">Explore my work ♡</a>
 
-    $("#clock-greeting").text("Good afternoon ✿");
-    $("#clock-message").text("Make something creative today.");
-    $(".clock-card").css("background-color", "#eee5f8");
+      <div class="hero-decoration">✿　✧　♡　✧</div>
+    </section>
 
-  } else {
+    <!-- Digital Clock -->
+    <section id="clock-section">
+      <p class="eyebrow">A LITTLE MOMENT IN TIME ✦</p>
+      <h2 class="section-heading">Local time</h2>
 
-    $("#clock-greeting").text("Good evening ✦");
-    $("#clock-message").text("Time to slow down and relax.");
-    $(".clock-card").css("background-color", "#e5d8f0");
+      <div class="clock-card">
+        <p id="clock-greeting">Hello!</p>
+        <div id="clock-time">00:00:00</div>
+        <p id="clock-date"></p>
+        <p id="clock-message">Enjoy the moment.</p>
+      </div>
+    </section>
 
-  }
-}
+    <!-- About Section -->
+    <section id="about">
+      <p class="eyebrow">A LITTLE ABOUT ME ✿</p>
+      <h2 class="section-heading">Getting to know me</h2>
 
-// Show the clock immediately
-displayTime();
+      <p class="section-description">
+        A few things about me and what inspires my creativity.
+      </p>
 
-// Update the clock every second
-setInterval(displayTime, 1000);
+      <div class="about-grid">
+
+        <div class="about-card">
+          <h3>♡ My Interests</h3>
+          <p>
+            I enjoy graphic design, illustration, typography,
+            and exploring different creative ideas.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <h3>✧ My Style</h3>
+          <p>
+            I love playful colors, interesting layouts,
+            little details, and whimsical visuals.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <h3>✿ My Goals</h3>
+          <p>
+            I want to keep learning new skills and create
+            designs that are both meaningful and fun.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="work">
+      <p class="eyebrow">THINGS I'VE CREATED ✧</p>
+      <h2 class="section-heading">My creative work</h2>
+
+      <p class="section-description">
+        A collection of projects I've worked on throughout my design journey.
+      </p>
+
+      <div class="project-grid">
+
+        <div class="project-card">
+          <span class="project-number">01</span>
+          <h3>Portrait Experiments</h3>
+          <p>
+            A series of grayscale portrait experiments
+            exploring contrast and visual composition.
+          </p>
+          <span class="project-tag">Graphic Design</span>
+        </div>
+
+        <div class="project-card">
+          <span class="project-number">02</span>
+          <h3>Calcifer Study</h3>
+          <p>
+            A digital illustration inspired by Calcifer,
+            exploring color and character design.
+          </p>
+          <span class="project-tag">Illustration</span>
+        </div>
+
+        <div class="project-card">
+          <span class="project-number">03</span>
+          <h3>Sol LeWitt Study</h3>
+          <p>
+            A geometric composition study inspired by
+            Sol LeWitt's approach to shapes and patterns.
+          </p>
+          <span class="project-tag">Digital Art</span>
+        </div>
+
+        <div class="project-card">
+          <span class="project-number">04</span>
+          <h3>Under $20</h3>
+          <p>
+            A Figma interface design project focused
+            on creating a simple shopping experience.
+          </p>
+          <span class="project-tag">UI/UX Design</span>
+        </div>
+
+        <div class="project-card">
+          <span class="project-number">05</span>
+          <h3>NYC Data Visualization</h3>
+          <p>
+            A visual exploration of unintentional drug
+            poisoning deaths in NYC from 2000 to 2024.
+          </p>
+          <span class="project-tag">Data Design</span>
+        </div>
+
+        <div class="project-card">
+          <span class="project-number">06</span>
+          <h3>Shirley Chisholm Campaign</h3>
+          <p>
+            A visual campaign inspired by Shirley
+            Chisholm's legacy and impact.
+          </p>
+          <span class="project-tag">Campaign Design</span>
+        </div>
+
+        <div class="project-card">
+          <span class="project-number">07</span>
+          <h3>Modular Alphabet</h3>
+          <p>
+            An experimental alphabet inspired by
+            Art Deco and Bauhaus design.
+          </p>
+          <span class="project-tag">Typography</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Data Visualization -->
+    <section id="data">
+      <p class="eyebrow">MY CREATIVE JOURNEY ✿</p>
+      <h2 class="section-heading">My projects so far</h2>
+
+      <p class="section-description">
+        A breakdown of the projects I've created across different design areas.
+      </p>
+
+      <div class="chart-container">
+        <canvas id="interestChart"></canvas>
+      </div>
+
+      <p class="project-total">7 projects and counting ♡</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <p class="eyebrow">LET'S CONNECT ✧</p>
+      <h2 class="section-heading">Thanks for stopping by!</h2>
+
+      <p class="section-description">
+        Want to see more of my work? Check out my portfolio.
+      </p>
+
+      <a
+        href="https://laylatavarezogando.myportfolio.com"
+        target="_blank"
+        class="button"
+      >
+        Visit my portfolio ♡
+      </a>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>Made with ♡ by Layla · 2026</p>
+    <p>Thanks for visiting my little corner of the internet ✿</p>
+  </footer>
+
+  <!-- Separate JavaScript file -->
+  <script src="script.js"></script>
+
+</body>
+</html>
 
 
 
